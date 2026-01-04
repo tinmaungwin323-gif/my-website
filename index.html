@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+ 
+  <title>Mini Project</title>
+  <style>
+ 
+.video-container {
+  display: flex;       /* အထဲက ပစ္စည်းတွေကို ဘေးတိုက်စီရန် */
+  gap: 20px;           /* ဗီဒီယိုတစ်ခုနဲ့တစ်ခု ကြား အကွာအဝေး */
+  justify-content: center; /* ဗီဒီယိုတွေကို စာမျက်နှာရဲ့ အလယ်မှာ ထားရန် */
+  flex-wrap: wrap;     /* နေရာမဆန့်ရင် အလိုအလျောက် အောက်ဆင်းရန် */
+}
+.navbar {
+  background-color: #333; /* Menu bar အရောင် */
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.navbar ul {
+  list-style-type: none; /* အစက်လေးတွေ ဖျောက်တာ */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Menu တွေကို ဘေးတိုက်စီတာ */
+}
+
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none; /* မျဉ်းတားတာကို ဖျောက်တာ */
+}
+
+.navbar li a:hover {
+  background-color: #555; /* Mouse တင်လိုက်ရင် အရောင်ပြောင်းတာ */
+}
+.audio-container {
+  display: flex;
+  flex-direction: column; /* တစ်ခုချင်းစီကို အပေါ်အောက်စီချင်ရင် သုံးပါ (သို့မဟုတ် flex ဆိုရင် ဘေးတိုက်ဖြစ်မယ်) */
+  gap: 10px;
+  margin-top: 20px;
+}
+.site-footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  border-radius: 8px 8px 0 0;
+}
+
+.map-container {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+.navbar li a:hover {
+  background-color: #007bff; /* Mouse တင်ရင် အပြာရောင်ပြောင်းရန် */
+  color: yellow; /* စာလုံးကို အဝါရောင်ပြောင်းရန် */
+  transition: 0.3s; /* အရောင်ပြောင်းတာကို ငြင်သာစေရန် */
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+<table border="1">
+  <thead>
+  <tr>
+    <th>No</th>
+    <th>Redmi</th>
+     <th>Oppo</th>
+     <th> Vivo </th>
+    <th>Tecno </th>
+    <th>Total </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>8</td>
+  <td>9</td>
+  <td>15</td>
+  <td>7</td>
+  <td></td>
+</tr>
+ 
+ <tr>
+  <td>2</td>
+  <td>8</td>
+  <td>9</td>
+  <td>15</td>
+  <td>7</td>
+  <td></td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>8</td>
+  <td>9</td>
+  <td>15</td>
+  <td>7</td>
+  <td></td>
+</tr>
+</tbody>
+</table><br>
+<a href="https://www.wikipedia.org" target="_blank">Wikipedia (Tab အသစ်တွင်ဖွင့်ရန်)</a><br>
+<a href="https://www.google.com"target="_blank"><img src="../photos/google.png"width="50px"height="60px"></a>
+<br>
+<a href="https://www.google.com"target="_blank">Google သို့သွားရန် ပုံကိုနိပ်လည်းရပါသည်
+</a><br><br>
+<div class="video-container">
+
+<video controls="controls"width="280px"height="210px"poster="../photos/1.png">
+  <source src="../mp4/2.mp4" type="video/mp4">
+</video>&nbsp;&nbsp;&nbsp;
+<video controls="controls"width="280px"height="210px"poster="../photos/1.png">
+  <source src="../mp4/2.mp4" type="video/mp4">
+</video>&nbsp;&nbsp;&nbsp;
+<video controls="controls"width="280px"height="210px"poster="../photos/1.png">
+  <source src="../mp4/3.mp4" type="video/mp4">
+</video>  </div><br><bar><hr>
+  <div class="audio-container">
+<audio controls="controls"> 
+<source src=" ../mp3/Htet Mon 1.mp3" type="audio/mp3">
+</audio>
+<audio controls="controls"> 
+<source src=" ../mp3/Htet Mon 2.mp3" type="audio/mp3">
+</audio>
+<audio controls="controls"> 
+<source src=" ../mp3/Htet Mon 3.mp3" type="audio/mp3">
+</audio>
+</div>
+<hr>
+<a href="tel:+959251057117"><img src="../photos/phone.png"width="30px"height="35px"></a><br><hr>
+
+<h3>ဆက်သွယ်ရန်ပုံစံ</h3>
+<form>
+  <label for="name">အမည်</label><br>
+  <input type="text"id="name"name="name" placeholder="သင်အမည်ကိုရိုက်ပါ"><br><br><br>
+
+  <label for="email">အီးမေးလ် </label><br> 
+  <input type="email" id="email"name="email" placeholder="example@gmail.com"><br><br>
+  <input type="submit" value="ပေးပို့ရန်">
+</form>
+<hr><br><br>
+
+<p>သင်နှစ်သက်သော ဘာသာစကားကို ရွေးပါ</p>
+<input type="radio"id="html" name="fav_language" value="html">
+<label for="html">HTML</label><br>
+<input type="radio"id="css" name="fav_language"value="html">
+<label for="css">CSS</label><br>
+<hr>
+
+<p>လိင်း</p>
+<input type="radio"id="Male" name="gender" value="male">
+<label for="male">ကျား</label><br>
+  <input type="radio" id="Female"name="gender" value="female">
+  <label for="female">မ</label><br>
+  <hr>
+<label for="city">မြို့နယ်</label>
+<select id="city"name="city">
+  <option value="yangon">ရန်ကုန်</option>
+    <option value="mandalay">မန္တလေ</option>
+      <option value="magway">မကွေး</option>
+        <option value="Bago">ပဲခူး</option>
+          <option value="rahkine">ရခိုင်</option>
+            <option value="sagaing">စစ်ကိုင်း</option><br><hr>
+</select>
+<div class="map-container">
+  <h3>ကျွန်ုပ်တို့၏ တည္ေနရာ</h3>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15277.42398555294!2d96.155!3d16.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDQ4JzAwLjAiTiA5NsKwMDknMTguMCJF!5e0!3m2!1smy!2smm!4v1625000000000" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+<footer class="site-footer">
+  <p>&copy; 2026 Tin Maung Win. All Rights Reserved.</p>
+  <p>သင်ယူမှုဖြင့် ဘဝကို အလှဆင်အံ့။</p>
+</footer>
+</body>
+</html>
