@@ -10,6 +10,7 @@
 <meta name="author" content="Tin Maung Win">
 <title>Tin Maung Win | Personal Portfolio & Mini Project</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Pyidaungsu&display=swap');
     body { font-family: 'Pyidaungsu', sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
@@ -62,6 +63,26 @@
   95% { transform: translateX(-50%); }
   100% { transform: translateX(0); }
 }
+ul {
+  list-style-type: none; /* အစက်အပြောက်များ ဖျောက်ရန် */
+  padding: 0;
+  margin: 0;
+}
+.navbar ul {
+  list-style-type: none; /* အစက်အပြောက်များ ဖျောက်ရန် */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+}
+
+.navbar li a {
+  padding: 14px 20px;
+  display: block;
+  color: white;
+  text-decoration: none;
+}
   </style>
 
 </head>
@@ -87,7 +108,7 @@
     <li><a href="gallery.html">Gallery</a></li>
      <li><a href="index.html#contact-section">Contact</a></li>
   </ul>
-</nav>><br>
+</nav><br>
 <div class="slider">
   <div class="slides">
     <img src="photos/2.png" alt="Image 1">
@@ -123,12 +144,18 @@
 <hr>
 <h3>ဆက်သွယ်ရန်ပုံစံ</h3>
 
-<form>
-  <label>အမည်</label><input type="text" placeholder="သင်အမည်ကိုရိုက်ပါ">
-  <label>အီးမေးလ်</label><input type="email" placeholder="example@gmail.com">
+<form action="https://formspree.io/f/xqeajejb" method="POST">
+  <label>အမည်</label>
+  <input type="text" name="name" required placeholder="သင်အမည်ကိုရိုက်ပါ">
+
+  <label>အီးမေးလ်</label>
+  <input type="email" name="email" required placeholder="example@gmail.com">
+
+  <label>စာတို</label>
+  <textarea name="message" required style="width:100%; border-radius:5px; height:80px;"></textarea>
+
   <input type="submit" value="ပေးပို့ရန်">
 </form>
-
 <footer style="text-align: center; padding: 20px; margin-top: 50px; background: #333; color: white; border-radius: 8px;">
   <p>© 2026 Tin Maung Win. All Rights Reserved.</p>
 </footer>
