@@ -23,10 +23,43 @@
     input[type="text"], input[type="email"] { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
     input[type="submit"] { background-color: #007bff; color: white; border: none; padding: 12px; border-radius: 5px; cursor: pointer; width: 100%; font-weight: bold; }
     .floating-messenger { position: fixed; bottom: 20px; right: 20px; background-color: #0084FF; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; box-shadow: 2px 2px 15px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; }
+    .dark-mode {
+  background-color: #1a1a1a !important;
+  color: white !important;
+}
+.dark-mode form, .dark-mode table {
+  background-color: #333 !important;
+  color: white !important;
+}
+.slider {
+  width:100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius:10px;
+  margin-bottom: 20px;
+}
+
+.slides {
+  display: flex;
+  width: 200%; /* ပုံအရေအတွက်ပေါ်မူတည်ပြီး တိုးပေးပါ */
+  animation: slideAnim 5s infinite;
+}
+.slides img {
+  width: 50%; /* ပုံတစ်ပုံချင်းစီရဲ့ အကျယ် */
+  height: 200px;
+  object-fit: cover;
+}
+@keyframes slideAnim {
+  0% { transform: translateX(0); }
+  45% { transform: translateX(0); }
+  50% { transform: translateX(-50%); }
+  95% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
   </style>
 </head>
 <body>
-
+<button onclick="toggleDarkMode()" style="padding: 10px; cursor: pointer;"> Dark Mode ပြောင်းရန်</button>
 <a href="https://m.me/tinmaungwin007" target="_blank" class="floating-messenger">
   <i class="fa-brands fa-facebook-messenger"></i>
 </a>
@@ -38,7 +71,14 @@
     <li><a href="#">Services</a></li>
     <li><a href="#">Contact</a></li>
   </ul>
-</nav>
+</nav><br>
+<div class="slider">
+  <div class="slides">
+    <img src="photos/2.png" alt="Image 1">
+    
+    <img src="photos/google.png" alt="Image 2">
+    </div>
+</div>
 
 <div class="video-container">
   <iframe width="100%" height="450" src="https://www.youtube.com/embed/3LmjpdfGvKA" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
@@ -50,7 +90,9 @@
   <a href="https://m.me/tinmaungwin007" target="_blank"><i class="fa-brands fa-facebook-messenger"></i></a>
   <a href="viber://chat?number=+959251057117" target="_blank"><i class="fa-brands fa-viber"></i></a>
   <a href="https://www.youtube.com/@coverbykomoe" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-</div>
+</div><br>
+<h3 id="contact-section">ဆက်သွယ်ရန်ပုံစံ</h3>
+<li><a href="#contact-section">Contact</a></li><br>
 
 <table>
   <thead>
@@ -64,6 +106,7 @@
 
 <hr>
 <h3>ဆက်သွယ်ရန်ပုံစံ</h3>
+
 <form>
   <label>အမည်</label><input type="text" placeholder="သင်အမည်ကိုရိုက်ပါ">
   <label>အီးမေးလ်</label><input type="email" placeholder="example@gmail.com">
@@ -73,6 +116,10 @@
 <footer style="text-align: center; padding: 20px; margin-top: 50px; background: #333; color: white; border-radius: 8px;">
   <p>© 2026 Tin Maung Win. All Rights Reserved.</p>
 </footer>
-
+<script>
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+}
+</script>
 </body>
 </html>
