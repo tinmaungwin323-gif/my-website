@@ -12,6 +12,25 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    .main-footer {
+    background-color: #333; /* နောက်ခံအမည်းရောင် */
+    color: white;           /* စာသားအဖြူရောင် */
+    padding: 30px 20px;     /* အပေါ်အောက် အကွာအဝေး */
+    text-align: center;     /* စာသားများကို အလယ်ပို့ရန် */
+    margin-top: 50px;       /* Body နဲ့ ခွာရန် */
+    border-radius: 10px 10px 0 0; /* အပေါ်ထောင့်လေးတွေကို အဝိုင်းလုပ်ရန် */
+}
+
+.counter-section {
+    margin-top: 15px;       /* စာသားနဲ့ Counter ကြား အကွာအဝေး */
+    border-top: 1px solid #555; /* အပေါ်မှာ မျဉ်းတားလေးတစ်ခု ထည့်ရန် */
+    padding-top: 15px;
+}
+
+.counter-section p {
+    font-size: 0.9rem;
+    color: #bbb;            /* Counter စာသားကို ခိုးရောင်ဖျော့ဖျော့လေးလုပ်ရန် */
+}
     ody {
   /* နူးညံ့တဲ့ အရောင်ပြေးလေး သုံးထားပါတယ် */
   background: linear-gradient(to right, #ece9e6, #ffffff); 
@@ -108,7 +127,39 @@ body {
 body {
   font-family: 'Pyidaungsu', sans-serif;
 }
-b
+html {
+  /* ဖုန်းရော ကွန်ပျူတာမှာပါ စာလုံးအရွယ်အစား အလိုအလျောက် ညှိပေးရန် */
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+  p { font-size: 0.9rem; }
+}
+
+}
+<style>
+  /* ... အရင်ရှိပြီးသား CSS ကုဒ်များ ... */
+
+  html {
+    font-size: 16px;
+  }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 1.5rem; }
+    h3 { font-size: 1.2rem; }
+    p { font-size: 0.9rem; }
+  }
+footer {
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 30px;
+</style>
+
   </style>
 
 </head>
@@ -186,21 +237,13 @@ b
 
   <input type="submit" value="ပေးပို့ရန်">
 </form>
-<footer style="text-align: center; padding: 20px; margin-top: 50px; background: #333; color: white; border-radius: 8px;">
-  <p>© 2026 Tin Maung Win. All Rights Reserved.</p>
+<footer class="main-footer">
+    <p> 2026 Tin Maung Win. All Rights Reserved.</p>
+    
+    <div class="counter-section">
+        <p>Website သို့ လာရောက်လည်ပတ်သူ အရေအတွက်</p>
+        <img src="https://counter9.optistats.ovh/private/freecounterstat.php?c=8l8unmly4u9f6w4u3t61m5h9z7ujy1q1" border="0" title="free counter" alt="free counter">
+    </div>
 </footer>
-<script>
-function toggleDarkMode() {
-  document.body.classList.toggle("dark-mode");
-}
-</script>
-<div style="margin-top: 20px; text-align: center; background: #f9f9f9; padding: 15px; border-radius: 10px;">
-  <p style="margin-bottom: 10px; font-weight: bold;">ဝက်ဘ်ဆိုဒ်သို့ လာရောက်လည်ပတ်သူပေါင်း</p>
-  
-  <a href="https://www.hitwebcounter.com" target="_blank">
-    <img src="https://hitwebcounter.com/counter/counter.php?page=tmw_music_site_2026&style=0005&nbdigits=5&type=page&initCount=1" 
-         title="Free Counter" Alt="web counter" border="0" />
-  </a>
-</div>
 </body>
 </html>
