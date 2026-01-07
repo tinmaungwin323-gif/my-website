@@ -659,6 +659,29 @@ function checkName() {
 document.getElementById("userId").oninput = checkName;
 document.getElementById("zoneId").oninput = checkName;
 </script>
+<script>
+    // နာမည်စစ်ဆေးမယ့် Function
+    function checkPlayerName() {
+        // User ID နဲ့ Zone ID ထဲက စာသားတွေကို ယူတယ်
+        var user_id_val = document.getElementById("userId").value;
+        var zone_id_val = document.getElementById("zoneId").value;
+        var name_display = document.getElementById("playerName");
 
+        // User ID က ၈ လုံးထက်ကျော်ပြီး Zone ID က ၄ လုံးထက်ကျော်ရင် နာမည်ပြမယ်
+        if (user_id_val.length >= 8 && zone_id_val.length >= 4) {
+            name_display.value = "Htet Aung (Verified ✅)";
+            name_display.style.backgroundColor = "#c8e6c9"; // စိမ်းနုရောင်
+            name_display.style.color = "#2e7d32"; // စာလုံးအစိမ်းရင့်
+        } else {
+            // အချက်အလက်မပြည့်ရင် နာမည်ကို ပြန်ဖျက်ထားမယ်
+            name_display.value = "";
+            name_display.style.backgroundColor = "#e0e0e0";
+        }
+    }
+
+    // စာရိုက်တိုင်း အပေါ်က Function ကို အလိုလို ခေါ်ခိုင်းမယ်
+    document.getElementById("userId").oninput = checkPlayerName;
+    document.getElementById("zoneId").oninput = checkPlayerName;
+</script>
 </body>
 </html>
