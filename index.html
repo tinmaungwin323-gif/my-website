@@ -157,7 +157,47 @@ footer {
     padding: 20px;
     text-align: center;
     border-radius: 10px;
-    margin-top: 30px;
+    margin-top: 30px;}
+    /* Share link တွေကို ခလုတ်ပုံစံပြောင်းခြင်း */
+.share-container a {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 20px;
+    text-decoration: none; /* မျဉ်းတားဖျောက်ရန် */
+    color: white !important;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+/* Facebook အတွက် အပြာရောင် */
+.share-container a:first-of-type {
+    background-color: #1877f2;
+}
+
+/* Messenger အတွက် အပြာနုရောင် */
+.share-container a:last-of-type {
+    background-color: #0084ff;
+}
+#myBtn {
+  display: none; /* အစပိုင်းမှာ ဖျောက်ထားမယ် */
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%; /* အဝိုင်းပုံစံ */
+  font-size: 18px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
 </style>
 
   </style>
@@ -244,6 +284,35 @@ footer {
         <p>Website သို့ လာရောက်လည်ပတ်သူ အရေအတွက်</p>
         <img src="https://counter9.optistats.ovh/private/freecounterstat.php?c=8l8unmly4u9f6w4u3t61m5h9z7ujy1q1" border="0" title="free counter" alt="free counter">
     </div>
+    <div class="share-container">
+  <p>ဒီ Website လေးကို သူငယ်ချင်းများထံ မျှဝေပါ -</p>
+  
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://tinmaungwin323-gif.github.io/my-website/" target="_blank" class="share-btn fb">
+    Facebook မှာ Share မယ်
+  </a>
+
+  <a href="fb-messenger://share/?link=https://tinmaungwin323-gif.github.io/my-website/" target="_blank" class="share-btn messenger">
+    Messenger ကနေ ပို့မယ်
+  </a>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top"></button>
 </footer>
+<script>
+let mybutton = document.getElementById("myBtn");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  window.scrollTo({top: 0, behavior: 'smooth'}); // အပေါ်ကို ချောချောမွေ့မွေ့ ပြန်တက်ရန်
+}
+</script>
 </body>
 </html>
