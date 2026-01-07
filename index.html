@@ -11,6 +11,7 @@
 <title>Tin Maung Win | Personal Portfolio & Mini Project</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
     .main-footer {
     background-color: #333; /* နောက်ခံအမည်းရောင် */
@@ -411,7 +412,13 @@ body.dark-theme {
         <input type="text" id="playerName" placeholder="ID ရိုက်ပြီးလျှင် နာမည်ပေါ်လာမည်" readonly 
                style="width: 100%; padding: 12px; border: none; border-radius: 8px; background: #e0e0e0; font-weight: bold;">
     </div>
-
+<div class="payment-methods">
+    <p style="text-align: center; color: #666; font-size: 14px;">We Accept (လက်ခံသော ငွေပေးချေမှုများ)</p>
+    <div style="display: flex; justify-content: center; gap: 20px; align-items: center;">
+        <img src="https://upload.wikimedia.org/wikipedia/en/b/ba/KBZ_Pay_logo.png" alt="KBZPay" style="width: 50px; height: auto;">
+        <img src="https://www.wavemoney.com.mm/images/logo.png" alt="WavePay" style="width: 100px; height: auto;">
+    </div>
+</div>
     <button onclick="sendToMessenger()" class="buy-now-btn" style="width: 100%; margin-top: 20px;">Buy Now (အခုဝယ်မယ်)</button>
 </div>
 <div class="diamond-grid">
@@ -769,7 +776,21 @@ function sendToMessenger() {
                  "User ID: " + uId + "%0A" + 
                  "Zone ID: (" + zId + ")%0A" +
                  "ဝယ်ယူမည့်ပမာဏ: " + finalAmount;
-    
+    function sendToMessenger() {
+    // ... အပေါ်က စစ်ဆေးတဲ့ ကုဒ်တွေရှိမယ် ...
+
+    // အချက်အလက်စုံပြီဆိုရင် ဒါလေး ပြမယ်
+    Swal.fire({
+        title: 'ခဏစောင့်ပေးပါဗျာ!',
+        text: 'Messenger သို့ ချိတ်ဆက်ပေးနေပါပြီ...',
+        icon: 'success',
+        timer: 2000, // ၂ စက္ကန့်ပြမယ်
+        showConfirmButton: false
+    }).then(() => {
+        // ၂ စက္ကန့်ပြည့်ရင် Messenger ဆီ ပို့မယ်
+        window.open("https://m.me/htet.aung.123?text=" + myText, "_blank");
+    });
+}
     window.open("https://m.me/htet.aung.123?text=" + myText, "_blank");
 }
 </script>
