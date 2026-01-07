@@ -415,19 +415,19 @@ body.dark-theme {
     <button onclick="sendToMessenger()" class="buy-now-btn" style="width: 100%; margin-top: 20px;">Buy Now (အခုဝယ်မယ်)</button>
 </div>
 <div class="diamond-grid">
-    <div class="diamond-card" onclick="selectDiamond(this, 'Diamond x 50+5')">
+    <div class="diamond-card" onclick="selectDiamond(this, '50+5 Diamonds')">
         <p>Diamond x 50+5</p>
         <button class="price-btn">MMK 4,000</button>
     </div>
-    <div class="diamond-card" onclick="selectDiamond(this, 'Diamond x 150+15')">
+    <div class="diamond-card" onclick="selectDiamond(this, '150+15 Diamonds')">
         <p>Diamond x 150+15</p>
         <button class="price-btn">MMK 10,000</button>
     </div>
-    <div class="diamond-card" onclick="selectDiamond(this, 'Diamond x 250+25')">
+    <div class="diamond-card" onclick="selectDiamond(this, '250+25 Diamonds')">
         <p>Diamond x 250+25</p>
         <button class="price-btn">MMK 16,000</button>
     </div>
-</div>
+    </div>
 
 <input type="hidden" id="selectedAmount" value="">
 <div class="slider">
@@ -726,6 +726,52 @@ document.getElementById("zoneId").oninput = checkName;
         }());
     };
 </script>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script>
+// အပေါ်ဆုံးမှာ ဒါလေးကို အရင်ဆုံး ရေးထားပါ (အရေးကြီးသည်)
+var finalAmount = ""; 
+
+// ၁။ Diamond Card ကို နှိပ်တဲ့အခါ အလုပ်လုပ်မည့်အပိုင်း
+function selectDiamond(element, amount) {
+    // အရင်ရွေးထားတဲ့ Card ရဲ့ အရောင်ကို ဖျက်မယ်
+    var cards = document.getElementsByClassName("diamond-card");
+    for (var i = 0; i < cards.length; i++) {
+        cards[i].classList.remove("selected");
+    }
+
+    // အခုနှိပ်လိုက်တဲ့ Card ကို အရောင်ပြောင်းမယ်
+    element.classList.add("selected");
+    
+    // ရွေးလိုက်တဲ့ Diamond ပမာဏကို Variable ထဲ ထည့်လိုက်ပြီ
+    finalAmount = amount; 
+    console.log("Selected: " + finalAmount); // စစ်ဆေးရန်
+}
+
+// ၂။ Buy Now နှိပ်တဲ့အခါ စစ်ဆေးမည့်အပိုင်း
+function sendToMessenger() {
+    var uId = document.getElementById("userId").value;
+    var zId = document.getElementById("zoneId").value;
+    var pName = document.getElementById("playerName").value;
+
+    // အရေးကြီးဆုံး စစ်ဆေးချက် - finalAmount ရှိမရှိ စစ်မယ်
+    if (finalAmount === "") {
+        alert("ကျေးဇူးပြု၍ ဝယ်ယူလိုသည့် Diamond ပမာဏကို အရင်နှိပ်ပြီး ရွေးချယ်ပေးပါဗျာ။");
+        return; // Diamond မရွေးထားရင် ရှေ့ဆက်မသွားဘူး
+    }
+
+    if (uId === "" || zId === "") {
+        alert("User ID နှင့် Zone ID ဖြည့်ပေးပါဦး။");
+        return;
+    }
+
+    // အချက်အလက်စုံမှ Messenger လင့်ခ်ဖွင့်မယ်
+    var myText = "MLBB Diamond ဝယ်ယူလိုပါသည်%0A%0A" + 
+                 "Player Name: " + pName + "%0A" +
+                 "User ID: " + uId + "%0A" + 
+                 "Zone ID: (" + zId + ")%0A" +
+                 "ဝယ်ယူမည့်ပမာဏ: " + finalAmount;
+    
+    window.open("https://m.me/htet.aung.123?text=" + myText, "_blank");
+}
+</script>
 </body>
 </html>
