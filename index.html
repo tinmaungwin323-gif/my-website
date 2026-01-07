@@ -366,6 +366,7 @@ body.dark-theme {
 
 </head>
 <body>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <div style="text-align: center; margin: 20px 0;">
     <p>နောက်ခံတေးဂီတ နားဆင်ရန် -</p>
     <audio controls loop>
@@ -604,17 +605,30 @@ document.getElementById("zoneId").addEventListener("input", function() {
     }
 });
 
-// ၃။ Buy Now နှိပ်ရင် Messenger ဆီ ပို့ခြင်း
+<script>
 function sendToMessenger() {
+    // ၁။ Box ထဲက တန်ဖိုးတွေကို ယူမယ်
     let uId = document.getElementById("userId").value;
     let zId = document.getElementById("zoneId").value;
     let pName = document.getElementById("playerName").value;
+    
+    // ၂။ စစ်ဆေးချက်များ (Validation)
+    if (uId.length < 8 || zId.length < 4) {
+        alert("ကျေးဇူးပြု၍ User ID နှင့် Zone ID ကို မှန်ကန်စွာ အရင်ဖြည့်ပါဗျာ။");
+        return; // ရှေ့ဆက်မသွားတော့ဘဲ ဒီမှာတင် ရပ်မယ်
+    }
 
-    if (uId == ""  zId == ""  finalAmount == "") {
-        alert("ကျေးဇူးပြု၍ အချက်အလက်ဖြည့်ပြီး Diamond ပမာဏကို ရွေးပါဦးဗျာ။");
+    if (pName === "" || pName.includes("ID ရိုက်ပြီးလျှင်")) {
+        alert("နာမည် စစ်ဆေးမှု မအောင်မြင်သေးပါဘူး။ ခဏစောင့်ပေးပါ သို့မဟုတ် ID ပြန်စစ်ပါ။");
         return;
     }
 
+    if (finalAmount === "") {
+        alert("ကျေးဇူးပြု၍ ဝယ်ယူလိုသည့် Diamond ပမာဏကို အရင်ရွေးချယ်ပေးပါဗျာ။");
+        return;
+    }
+
+    // ၃။ အကုန်ပြည့်စုံမှ Messenger ဆီ ပို့မယ်
     let myText = "MLBB Diamond ဝယ်ယူလိုပါသည်%0A%0A" + 
                  "Player Name: " + pName + "%0A" +
                  "User ID: " + uId + "%0A" + 
@@ -623,6 +637,7 @@ function sendToMessenger() {
     
     window.open("https://m.me/htet.aung.123?text=" + myText, "_blank");
 }
+</script>
 // ID ရိုက်နေတုန်း နာမည်ပေါ်အောင် စောင့်ကြည့်တဲ့ကုဒ်
 document.getElementById("zoneId").addEventListener("input", function() {
     let uId = document.getElementById("userId").value;
@@ -683,5 +698,34 @@ document.getElementById("zoneId").oninput = checkName;
     document.getElementById("userId").oninput = checkPlayerName;
     document.getElementById("zoneId").oninput = checkPlayerName;
 </script>
+<script>
+    // ဝက်ဘ်ဆိုဒ် ဖွင့်လိုက်တာနဲ့ မီးပန်းလွှတ်မယ်
+    window.onload = function() {
+        var duration = 3 * 1000;
+        var end = Date.now() + duration;
+
+        (function frame() {
+            confetti({
+                particleCount: 5,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 },
+                colors: ['#ffd700', '#ffffff', '#1a237e']
+            });
+            confetti({
+                particleCount: 5,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 },
+                colors: ['#ffd700', '#ffffff', '#1a237e']
+            });
+
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+        }());
+    };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </body>
 </html>
