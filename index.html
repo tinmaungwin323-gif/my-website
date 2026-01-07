@@ -210,6 +210,27 @@ footer {
 .news-ticker marquee {
     font-size: 1rem;
 }
+/* Logo နဲ့ စာသားကို တစ်တန်းတည်းဖြစ်စေရန် */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+/* Logo ပုံရဲ့ အရွယ်အစားကို သတ်မှတ်ခြင်း */
+.site-logo {
+  width: 40px;  /* လိုချင်သလို အကြီးအသေး ညှိနိုင်ပါတယ် */
+  height: 40px;
+  border-radius: 50%; /* Logo ကို အဝိုင်းပုံစံလုပ်ချင်ရင် သုံးပါ */
+  margin-right: 10px; /* စာသားနဲ့ အကွာအဝေး */
+  object-fit: cover;
+}
+
+.brand-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
 </style>
 
   </style>
@@ -230,13 +251,13 @@ footer {
   <i class="fa-brands fa-facebook-messenger"></i>
 </a>
 
-<nav class="navbar">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Me</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-     <li><a href="index.html#contact-section">Contact</a></li>
-  </ul>
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="logo-link">
+      <img src="logo.png" alt="Logo" class="site-logo"> 
+      <span class="brand-text">Tin Maung Win Official</span>
+    </a>
+    </div>
 </nav><br>
 <div class="news-ticker">
     <marquee behavior="scroll" direction="left">
