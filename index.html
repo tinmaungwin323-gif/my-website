@@ -231,6 +231,62 @@ footer {
   font-weight: bold;
   font-size: 1.2rem;
 }
+.diamond-grid {
+    display: flex;
+    flex-wrap: wrap; /* နေရာမဆန့်ရင် အောက်ကြောင်းဆင်းပေးဖို့ */
+    gap: 15px;      /* Box တစ်ခုနဲ့တစ်ခု အကွာအဝေး */
+    justify-content: center;
+    padding: 20px;
+}
+
+.diamond-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 180px;   /* Box ရဲ့ အကျယ် */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+}
+
+.price-btn {
+    background-color: #f3f3f3;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+.input-section {
+    background: #1a237e; /* နက်ပြာရောင် */
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.input-group {
+    display: flex;
+    gap: 20px;
+}
+
+.input-field {
+    flex: 1; /* Box နှစ်ခုကို အညီအမျှ ခွဲယူစေခြင်း */
+}
+
+.input-field label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+}
 </style>
 
   </style>
@@ -264,6 +320,32 @@ footer {
          ကျွန်တော့်ရဲ့ ဝက်ဘ်ဆိုဒ်လေးကို လာရောက်လည်ပတ်တဲ့အတွက် အထူးကျေးဇူးတင်ရှိပါတယ်...  နောက်ဆုံးထွက် Cover သီချင်းသစ်များကို About Me Page တွင် နားဆင်နိုင်ပါပြီ...  Diamond ဈေးနှုန်းများကိုလည်း Home Page တွင် ကြည့်ရှုနိုင်ပါသည်... 
     </marquee>
 </div>
+<div class="input-section">
+    <h3>Mobile Legends Top-up</h3>
+    <div class="input-group">
+        <div class="input-field">
+            <label>User ID</label>
+            <input type="text" placeholder="12345678" id="userId">
+        </div>
+        <div class="input-field">
+            <label>Zone ID</label>
+            <input type="text" placeholder="(1234)" id="zoneId">
+        </div>
+    </div>
+</div>
+<div class="diamond-grid">
+    <div class="diamond-card">
+        <p>Diamond x 50+5</p>
+        <button class="price-btn">MMK 4,000</button>
+    </div>
+    <div class="diamond-card">
+        <p>Diamond x 150+15</p>
+        <button class="price-btn">MMK 10,000</button>
+    </div>
+    <div class="diamond-card">
+        <p>Diamond x 250+25</p>
+        <button class="price-btn">MMK 16,000</button>
+    </div>
 <div class="slider">
   <div class="slides">
     <img src="photos/2.png" alt="Image 1">
@@ -272,6 +354,7 @@ footer {
     </div>
 </div>
 
+</div>
 <div class="video-container">
   <iframe width="100%" height="450" src="https://www.youtube.com/embed/3LmjpdfGvKA" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 </div>
@@ -284,7 +367,7 @@ footer {
   <a href="https://www.youtube.com/@coverbykomoe" target="_blank"><i class="fa-brands fa-youtube"></i></a>
 
     <a href="tel:+959251057117" style="text-decoration: none; color: #333; font-weight: bold;">
-    <img src="../photos/phone.png" width="40" height="40" style="vertical-align: middle;"> 
+    <img src="phone.png" width="40" height="40" style="vertical-align: middle;"> 
   </i></a>
 </div><br>
 <h3 id="contact-section">ဆက်သွယ်ရန်ပုံစံ</h3>
